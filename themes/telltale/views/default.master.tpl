@@ -88,22 +88,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 {/literal}
 <main class="site__content">
-  {literal}
-    <style>
-      .tt-readonly-banner{background:#FFD200;color:#1d1d1f;font-family:Roboto,Arial,sans-serif}
-      .tt-readonly-banner__inner{display:flex;align-items:center;justify-content:space-between;gap:16px;max-width:1200px;margin:0 auto;padding:14px 20px}
-      .tt-readonly-banner__text{margin:0;font-size:15px;line-height:1.45}
-      .tt-readonly-banner__button{flex-shrink:0;display:inline-block;background:#5865F2;color:#fff !important;font-weight:700;font-size:14px;padding:10px 18px;border-radius:4px;text-decoration:none !important;white-space:nowrap}
-      .tt-readonly-banner__button:hover{background:#4752c4}
-      @media (max-width:640px){.tt-readonly-banner__inner{flex-direction:column;align-items:flex-start}}
-    </style>
-    <div class="tt-readonly-banner" role="region" aria-label="Forum announcement">
-      <div class="tt-readonly-banner__inner">
-        <p class="tt-readonly-banner__text">The Telltale forums are now read only. Past posts will stay available to browse, but new posts and replies have moved to our official Discord.</p>
-        <a class="tt-readonly-banner__button" href="https://discord.gg/telltaleofficial" target="_blank" rel="noopener">Join the conversation on Discord</a>
-      </div>
-    </div>  
-  {/literal}
   <div id="Frame" class="container">
     <div class="Head" id="Head">
       {module name="MeModule"}

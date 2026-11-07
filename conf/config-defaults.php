@@ -4,10 +4,10 @@
 $Configuration = [];
 
 // Auto-enable some addons.
-$Configuration['EnabledPlugins']['stubcontent'] = true;
+// $Configuration['EnabledPlugins']['stubcontent'] = true;
 $Configuration['EnabledPlugins']['swagger-ui'] = true;
 $Configuration['EnabledApplications']['Dashboard'] = 'dashboard';
-$Configuration['EnabledPlugins']['rich-editor'] = true;
+// $Configuration['EnabledPlugins']['rich-editor'] = true;
 
 // ImageUpload
 $Configuration['ImageUpload']['Limits']['Enabled'] = false;
@@ -78,7 +78,7 @@ $Configuration['Garden']['Registration']['InviteRoles'] = 'FALSE';
 $Configuration['Garden']['Registration']['ConfirmEmail'] = false;
 $Configuration['Garden']['Registration']['MinPasswordLength'] = 6;
 $Configuration['Garden']['Registration']['NameUnique'] = true;
-$Configuration['Garden']['TermsOfService'] = '/home/termsofservice'; // The url to the terms of service.
+$Configuration['Garden']['TermsOfService'] = '/tos'; // The url to the terms of service.
 $Configuration['Garden']['Password']['MinLength'] = 6;
 $Configuration['Garden']['Roles']['Manage'] = true; // @deprecated
 
@@ -107,13 +107,13 @@ $Configuration['Garden']['VanillaUrl'] = 'https://open.vanillaforums.com';
 $Configuration['Garden']['CanProcessImages'] = false;
 $Configuration['Garden']['Upload']['MaxFileSize'] = '50M';
 $Configuration['Garden']['Upload']['AllowedFileExtensions'] = ['txt', 'jpg', 'jpeg', 'gif', 'png', 'bmp', 'tiff', 'ico', 'zip', 'gz', 'tar.gz', 'tgz', 'psd', 'ai', 'fla', 'pdf', 'doc', 'xls', 'ppt', 'docx', 'xlsx', 'pptx', 'log', 'rar', '7z'];
-$Configuration['Garden']['Profile']['MaxHeight'] = 560;
-$Configuration['Garden']['Profile']['MaxWidth'] = 560;
+$Configuration['Garden']['Profile']['MaxHeight'] = 200;
+$Configuration['Garden']['Profile']['MaxWidth'] = 250;
 $Configuration['Garden']['Thumbnail']['Size'] = 200;
 
 // Appearance.
-$Configuration['Garden']['Theme'] = 'keystone';
-$Configuration['Garden']['MobileTheme'] = 'mobile';
+$Configuration['Garden']['Theme'] = 'telltale';
+$Configuration['Garden']['MobileTheme'] = 'telltale';
 $Configuration['Garden']['Menu']['Sort'] = ['Dashboard', 'Discussions', 'Questions', 'Activity', 'Applicants', 'Conversations', 'User'];
 $Configuration['Garden']['ThemeOptions']['Styles']['Key'] = 'Default';
 $Configuration['Garden']['ThemeOptions']['Styles']['Value'] = '%s_default';
@@ -132,8 +132,8 @@ $Configuration['Garden']['Embed']['PageToForum'] = true;
 $Configuration['Garden']['SignIn']['Popup'] = true; // Should the sign-in link pop up or go to it's own page? (SSO requires going to it's own external page)
 
 // User experience & formatting.
-$Configuration['Garden']['InputFormatter'] = 'Rich'; // Html, BBCode, Markdown, Text, Rich
-$Configuration['Garden']['MobileInputFormatter'] = 'Rich';
+$Configuration['Garden']['InputFormatter'] = 'Markdown'; // Html, BBCode, Markdown, Text, Rich
+$Configuration['Garden']['MobileInputFormatter'] = 'Markdown';
 $Configuration['Garden']['Html']['AllowedElements'] = "a, abbr, acronym, address, area, audio, b, bdi, bdo, big, blockquote, br, caption, center, cite, code, col, colgroup, dd, del, details, dfn, div, dl, dt, em, figure, figcaption, font, h1, h2, h3, h4, h5, h6, hgroup, hr, i, img, ins, kbd, li, map, mark, menu, meter, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, summary, table, tbody, td, tfoot, th, thead, time, tr, tt, u, ul, var, video, wbr";
 $Configuration['Garden']['Search']['Mode'] = 'boolean'; // matchboolean, match, boolean, like
 $Configuration['Garden']['EditContentTimeout'] = 3600; // -1 means no timeout. 0 means immediate timeout. > 0 is in seconds. 60 * 60 = 3600 (aka 1hr)
@@ -171,8 +171,25 @@ $Configuration['Modules']['Conversations']['Panel'] = ['MeModule', 'UserBoxModul
 $Configuration['Modules']['Conversations']['Content'] = ['MessageModule', 'MeModule', 'UserBoxModule', 'NewConversationModule', 'Notices', 'Content', 'Ads'];
 
 // Routes.
-$Configuration['Routes']['DefaultController'] = 'discussions';
+$Configuration['Routes']['DefaultController'] = 'categories';
 $Configuration['Routes']['DefaultForumRoot'] = 'discussions';
 $Configuration['Routes']['Default404'] = ['dashboard/home/filenotfound', 'NotFound'];
 $Configuration['Routes']['DefaultPermission'] = ['dashboard/home/unauthorized', 'NotAuthorized'];
 $Configuration['Routes']['UpdateMode'] = 'dashboard/home/updatemode';
+
+// Tagging.
+$Configuration['Tagging']['Discussions']['Enabled'] = true;
+
+// Telltale Settings.
+$Configuration['Garden']['HomepageTitle'] = 'Telltale Community';
+$Configuration['Garden']['Email']['SupportName'] = 'Telltale Community';
+$Configuration['Garden']['Description'] = 'Welcome to the Telltale Community. Find your favorite Telltale titles below and join the discussions!';
+$Configuration['Garden']['FavIcon'] = 'http://localhost/images/favicon_192.png';
+$Configuration['Garden']['DefaultAvatar'] = 'https://cdn.telltalegames.com/avatars/v1/200x250/ANON_avatar_0002.png';
+
+// Telltale Addons.
+$Configuration['EnabledPlugins']['editor'] = true;
+$Configuration['EnabledPlugins']['Gravatar'] = true;
+$Configuration['EnabledPlugins']['vanillicon'] = true;
+$Configuration['EnabledPlugins']['VanillaStats'] = true;
+$Configuration['EnabledPlugins']['TelltaleAvatars'] = true;

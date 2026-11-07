@@ -1,4 +1,5 @@
 .DS_Store
+.htaccess
 Thumbs.db
 */.sass-cache/*
 *.scssc
@@ -11,6 +12,7 @@ _notes
 .settings
 .buildpath
 .idea
+conf/config.php
 login/config.php
 login/embed.html
 login/functions.jsconnect.php

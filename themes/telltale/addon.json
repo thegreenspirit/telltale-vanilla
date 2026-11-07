@@ -1,0 +1,15 @@
+{
+  "name": "Telltale.com",
+  "description": "Match the look of the telltale.com website",
+  "version": "1.0.2",
+  "license": "proprietary",
+  "hidden": false,
+  "key": "telltale",
+  "type": "theme",
+  "authors": [
+    {
+      "name": "Jesse Wagstaff",
+      "email": "jwagstaff@telltale.com"
+    }
+  ]
+}

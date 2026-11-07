@@ -1,0 +1,21 @@
+{
+  "name": "Telltale Avatars",
+  "description": "Allow users to set their photo (avatar) to one of our avatar presets.",
+  "version": "0.1",
+  "requiredTheme": false,
+  "hasLocale": false,
+  "registerPermissions": false,
+  "icon": "telltale-addon.png",
+  "key": "telltaleavatars",
+  "settingsPermission": "Garden.Users.Manage",
+  "type": "addon",
+  "authors": [
+    {
+      "name": "Jesse Wagstaff",
+      "email": "jwagstaff@telltale.com"
+    }
+  ],
+  "require": {
+    "vanilla": ">=2.4"
+  }
+}

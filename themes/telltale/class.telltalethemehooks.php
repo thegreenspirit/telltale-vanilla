@@ -21,20 +21,6 @@ class TelltaleThemeHooks extends Gdn_Plugin {
     }
 
     public function activityController_render_before($sender) {
-        if (!Gdn::session()->isValid()) {
-            $request = Gdn::request();
-            $scheme = $request->scheme() ?: 'http';
-            $hostAndPort = $request->hostAndPort();
-
-            if ($hostAndPort) {
-                redirectTo($scheme.'://'.$hostAndPort.'/account/login?rd=community');
-            } else {
-                redirectTo('/account/login?rd=community');
-            }
-
-            return;
-        }
-
         $this->removeTelltaleSidebarModules($sender);
     }
 

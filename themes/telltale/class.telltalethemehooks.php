@@ -65,7 +65,7 @@ class TelltaleThemeHooks extends Gdn_Plugin {
         }
 
         $displayAs = val('DisplayAs', $category);
-        if (!in_array($displayAs, ['Categories', 'Flat', 'Heading'], true)) {
+        if (in_array($displayAs, 'Discussions', true)) {
             return;
         }
 

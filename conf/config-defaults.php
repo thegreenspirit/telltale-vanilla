@@ -193,3 +193,4 @@ $Configuration['EnabledPlugins']['Gravatar'] = true;
 $Configuration['EnabledPlugins']['vanillicon'] = true;
 $Configuration['EnabledPlugins']['VanillaStats'] = true;
 $Configuration['EnabledPlugins']['TelltaleAvatars'] = true;
+$Configuration['EnabledPlugins']['TelltaleAccountSSO'] = true;

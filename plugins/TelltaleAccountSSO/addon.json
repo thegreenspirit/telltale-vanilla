@@ -1,0 +1,22 @@
+{
+  "name": "Telltale Account SSO",
+  "description": "Automatically signs Vanilla users in with a valid Telltale account session.",
+  "version": "0.1",
+  "requiredTheme": false,
+  "hasLocale": false,
+  "registerPermissions": false,
+  "mobileFriendly": true,
+  "icon": "telltale-addon.png",
+  "key": "telltaleaccountsso",
+  "settingsPermission": "Garden.Users.Manage",
+  "type": "addon",
+  "authors": [
+    {
+      "name": "(Not) Jesse Wagstaff",
+      "email": "jwagstaff@telltale.com"
+    }
+  ],
+  "require": {
+    "vanilla": ">=2.4"
+  }
+}

@@ -16,34 +16,10 @@ if ($this->data('EnableFollowingFilter')) {
     echo '<div class="PageControls Top">'.categoryFilters().'</div>';
 }
 
-$categories = $this->data('CategoryTree');
+$categories = telltaleFilterArchivedCategories($this->data('CategoryTree'));
 $this->EventArguments['NumRows'] = count($categories);
 
-if (is_null($this->Category)) {
-    if (empty($categories)) {
-        echo '<div class="Empty">'.t('No categories were found.').'</div>';
-    } else {
-        ?>
-        <div class="DataListWrap">
-            <h2 class="sr-only"><?php echo t('Category List'); ?></h2>
-            <ul class="DataList CategoryList TelltaleCategoryList">
-                <?php telltaleWriteCategoryCards($categories, 1); ?>
-            </ul>
-        </div>
-        <?php
-    }
-} else {
-    ?>
-    <h2 class="sr-only"><?php echo t('Category List'); ?></h2>
-    <ul class="DataList CategoryList">
-        <?php foreach ($categories as $category) {
-            $this->EventArguments['Category'] = &$category;
-            $this->fireEvent('BeforeCategoryItem');
-            writeListItem($category, 1);
-        } ?>
-    </ul>
-    <?php
-}
+telltaleWriteCategoryList($categories, 1);
 ?>
 <div class="PageControls Bottom">
     <?php PagerModule::write(); ?>

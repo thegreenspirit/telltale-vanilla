@@ -15,21 +15,6 @@ if ($this->data('EnableFollowingFilter')) {
     echo '<div class="PageControls Top">'.categoryFilters().'</div>';
 }
 
-$categories = $this->data('CategoryTree');
+$categories = telltaleFilterArchivedCategories($this->data('CategoryTree'));
 
-if (is_null($this->Category)) {
-    if (empty($categories)) {
-        echo '<div class="Empty">'.t('No categories were found.').'</div>';
-    } else {
-        ?>
-        <div class="DataListWrap">
-            <h2 class="sr-only"><?php echo t('Category List'); ?></h2>
-            <ul class="DataList CategoryList TelltaleCategoryList">
-                <?php telltaleWriteCategoryCards($categories, 1); ?>
-            </ul>
-        </div>
-        <?php
-    }
-} else {
-    writeCategoryList($categories, 1);
-}
+telltaleWriteCategoryList($categories, 1);

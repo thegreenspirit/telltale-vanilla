@@ -52,6 +52,57 @@ function telltaleCategoryBackgroundStyle($photoUrl) {
 
 /**
  * @param array $categories
+ * @return array
+ */
+function telltaleFilterArchivedCategories($categories) {
+    if (empty($categories) || !is_array($categories)) {
+        return [];
+    }
+
+    $result = [];
+    foreach ($categories as $category) {
+        if (val('Archived', $category)) {
+            continue;
+        }
+
+        $children = val('Children', $category);
+        if (is_array($children) && !empty($children)) {
+            $children = telltaleFilterArchivedCategories($children);
+            if (is_array($category)) {
+                $category['Children'] = $children;
+            } else {
+                $category->Children = $children;
+            }
+        }
+
+        $result[] = $category;
+    }
+
+    return $result;
+}
+
+/**
+ * @param array $categories
+ * @param int $depth
+ * @return void
+ */
+function telltaleWriteCategoryList($categories, $depth = 1) {
+    if (empty($categories)) {
+        echo '<div class="Empty">'.t('No categories were found.').'</div>';
+        return;
+    }
+    ?>
+    <div class="DataListWrap">
+        <h2 class="sr-only"><?php echo t('Category List'); ?></h2>
+        <ul class="DataList CategoryList TelltaleCategoryList">
+            <?php telltaleWriteCategoryCards($categories, $depth); ?>
+        </ul>
+    </div>
+    <?php
+}
+
+/**
+ * @param array $categories
  * @param int $depth
  * @return void
  */

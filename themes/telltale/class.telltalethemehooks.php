@@ -12,6 +12,10 @@ class TelltaleThemeHooks extends Gdn_Plugin {
         redirectTo('/account/login?rd=community');
     }
 
+    public function homeController_unauthorized_before($sender) {
+        $sender->MasterView = 'unauthorized';
+    }
+
     public function discussionController_render_before($sender) {
         $this->removeTelltaleSidebarModules($sender);
     }
@@ -65,7 +69,7 @@ class TelltaleThemeHooks extends Gdn_Plugin {
         }
 
         $displayAs = val('DisplayAs', $category);
-        if (in_array($displayAs, 'Discussions', true)) {
+        if ($displayAs === 'Discussions') {
             return;
         }
 
@@ -78,6 +82,9 @@ class TelltaleThemeHooks extends Gdn_Plugin {
         $descendants = CategoryModel::getSubtree($categoryID, false);
         $directChildren = [];
         foreach ($descendants as $candidate) {
+            if (val('Archived', $candidate)) {
+                continue;
+            }
             if ((int)val('ParentCategoryID', $candidate, 0) === $categoryID) {
                 $directChildren[] = $candidate;
             }

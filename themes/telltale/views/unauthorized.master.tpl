@@ -110,10 +110,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
       <nav>
         <ul class="nav nav--horizontal nav--gutters">
-          <li><a href="https://www.telltale.com/series" class="dropdown-toggle">all series</a></li>
-          <li><a href="https://community.telltale.com" class="">community</a></li>
-          <li><a href="https://www.telltale.com/news" class="">news</a></li>
-          <li><a href="https://www.telltale.com/support" class="">support</a></li>
+          <li><a href="/series" class="dropdown-toggle">all series</a></li>
+          <li><a href="/community" class="">community</a></li>
+          <li><a href="/news" class="">news</a></li>
+          <li><a href="/support" class="">support</a></li>
+          <li><a href="/company" class="">company</a></li>
+          <li><a href="/jobs" class="">jobs</a></li>
         </ul>
       </nav>
 
